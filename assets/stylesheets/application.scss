@@ -1,0 +1,17 @@
+body {
+  font-family: Helvetica;
+}
+
+#root {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar ul{
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+}
