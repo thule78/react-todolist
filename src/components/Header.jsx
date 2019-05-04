@@ -1,7 +1,22 @@
 import React from 'react'
 
-function Header (){
-  return (
+// function Header (){
+//   return (
+//     <div>
+//       <nav className="navbar">
+//         <ul>
+//           <li>Home</li>
+//           <li>Todo List</li>
+//           <li>About</li>
+//         </ul>
+//       </nav>
+//     </div>
+//     )
+// }
+
+class Header extends React.Component{
+  render(){
+    return (
     <div>
       <nav className="navbar">
         <ul>
@@ -12,6 +27,7 @@ function Header (){
       </nav>
     </div>
     )
+  }
 }
 
 export default Header
