@@ -9,6 +9,22 @@ class MainContent extends Component {
     this.state = {
       todos : todosData
     }
+
+    this.handleChanged = this.handleChanged.bind(this)
+  }
+
+  handleChanged(id) {
+    this.setState(prevState =>{
+      const updatedTodos = prevState.todos.map(todo => {
+        if (todo.id === id) {
+          todo.completed = !todo.completed
+        }
+        return todo
+      })
+      return {
+        todos: updatedTodos
+      }
+    })
   }
   render(){
     const date = new Date()
@@ -27,7 +43,7 @@ class MainContent extends Component {
     }
     const todoItems =this.state.todos.map((item)=>{
       return(
-        <TodoItem key={item.id} item={item} />
+        <TodoItem key={item.id} item={item} handleChanged={this.handleChanged} />
         )
     })
 
