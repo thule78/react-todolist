@@ -4,6 +4,12 @@ import todosData from './TodoData'
 import TodoItem from './TodoItem'
 
 class MainContent extends Component {
+  constructor() {
+    super()
+    this.state = {
+      todos : todosData
+    }
+  }
   render(){
     const date = new Date()
     const yyyy =  date.getFullYear()
@@ -19,7 +25,7 @@ class MainContent extends Component {
     }else {
       timeOfDay = "Evening"
     }
-    const todoItems =todosData.map((item)=>{
+    const todoItems =this.state.todos.map((item)=>{
       return(
         <TodoItem key={item.id} item={item} />
         )
